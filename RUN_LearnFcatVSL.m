@@ -231,6 +231,14 @@ Screen('Flip', w);
 save(datafname);
 
 
+results = [sum(data{runcount,1}(:,20))/64
+sum(data{runcount,2}(:,20))/64
+sum(data{runcount,3}(:,20))/64
+sum(data{runcount,4}(:,20))/64
+sum(data{runcount,5}(:,20))/64
+sum(data{runcount,6}(:,20))/64]
+
+
 
 sca;
 

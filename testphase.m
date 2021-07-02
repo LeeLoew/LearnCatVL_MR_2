@@ -214,6 +214,17 @@ FrameLog(:,10) = Shuffle(repmat([0 0],1, 16))';
 FrameLog(:,11) = Shuffle(repmat([0 0],1, 16))';
 FrameLog(:,12) = Shuffle(repmat([0 0],1, 16))';
 FrameLog(:,13) = Shuffle(repmat([0 0],1, 16))'; %I'm lazy, need to make record space
+FrameLogtwo =  FrameLog; %double the number of test trials
+for swap = 1:length(FrameLogtwo) %counterbalance what appears first with proper spacing between trials
+    if FrameLogtwo(swap,9) == 1
+        FrameLogtwo(swap,9) = 2;
+    else
+        FrameLogtwo(swap,9) = 1;
+    end
+    
+end
+FrameLog = [FrameLog
+    FrameLogtwo];
 
 
 for recTrial = 1:length(FrameLog) %times two because we have 2 sets of images now with nback and cat
